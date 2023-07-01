@@ -15,39 +15,46 @@ const DataContextProvider = ({ children }) => {
 
   localStorage.setItem("allRecipes", JSON.stringify(state.recipes));
 
-  // const getFilteredData = (recipes, search, category) => {
-  //   if (search.length === 0) return recipes;
-  //   switch (category) {
-  //     case "name": {
-  //       return recipes.filter((recipe) =>
-  //         recipe.name.toLowerCase().includes(search.toLowerCase())
-  //       );
-  //     }
+  const getFilteredData = (recipes, type, search) => {
+    if (search.length === 0) return recipes;
+    switch (type) {
+      case "name": {
+        return recipes.filter((element) =>
+          element.name.toLowerCase().includes(search.toLowerCase())
+        );
+      }
 
-  //     case "cuisine": {
-  //       return recipes.filter((recipe) =>
-  //         recipe.cuisine.toLowerCase().includes(search.toLowerCase())
-  //       );
-  //     }
+      case "cuisine": {
+        return recipes.filter((element) =>
+          element.cuisine.toLowerCase().includes(search.toLowerCase())
+        );
+      }
 
-  //     case "ingredients": {
-  //       return recipes.filter((recipe) =>
-  //         recipe.ingredients.some((item) =>
-  //           item.toLowerCase().includes(search.toLowerCase())
-  //         )
-  //       );
-  //     }
+      case "ingredients": {
+        return recipes.filter((element) =>
+          element.ingredients.some((item) =>
+            item.toLowerCase().includes(search.toLowerCase())
+          )
+        );
+      }
 
-  //     default:
-  //       break;
-  //   }
-  // };
+      default:
+        break;
+    }
+  };
+
+  const filterData = getFilteredData(
+    state.recipes,
+    state.searchInputFilterType,
+    state.searchText
+  );
 
   return (
     <DataContext.Provider
       value={{
         state,
         dispatch,
+        filterData,
       }}
     >
       {children}

@@ -5,11 +5,7 @@ import RecipeCard from "./components/RecipeCard";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 const HomePage = () => {
-  const {
-    filterData,
-    dispatch,
-    state: { recipes },
-  } = useData();
+  const { filterData, dispatch } = useData();
 
   const modalOpenHandler = () => {
     dispatch({ type: "OpenAddRecipeModal" });
@@ -20,9 +16,9 @@ const HomePage = () => {
       <SearchBox />
       <p className="title"> All Recipes</p>
       <ul>
-        {recipes?.length > 0 &&
-          recipes?.map((item) => (
-            <RecipeCard recipeListItem={item} key={item.id} />
+        {filterData?.length > 0 &&
+          filterData?.map((item, id) => (
+            <RecipeCard recipeListItem={item} key={id} />
           ))}
 
         <div

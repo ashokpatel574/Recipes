@@ -15,7 +15,10 @@ const SearchBox = () => {
 
     dispatch({
       type: "searchFilter",
-      payload: filterInput,
+      payload: {
+        type: "filterInput",
+        text: searchInput,
+      },
     });
   };
 

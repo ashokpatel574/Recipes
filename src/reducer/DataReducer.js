@@ -19,6 +19,8 @@ export const DataReducer = (state, action) => {
     case "searchFilter": {
       return {
         ...state,
+        searchInputFilterType: action.payload.type,
+        searchText: action.payload.text,
       };
     }
 
