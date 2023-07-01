@@ -1,24 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useData } from "../context/DataContext";
 
 const SearchBox = () => {
-  const [searchInput, setSearchInput] = useState();
-  const [filterInput, setFilterMenu] = useState("");
-  const { dispatch } = useData();
+  const [searchInput, setSearchInput] = useState("");
+
+  const {
+    dispatch,
+    state: { searchInputFilterType },
+  } = useData();
 
   const searchInputHandler = (e) => {
     setSearchInput(e.target.value);
+    dispatch({
+      type: "searchFilter",
+      payload: searchInput,
+    });
   };
 
   const filterChangeHandler = (e) => {
-    setFilterMenu(e.target.value);
-
     dispatch({
-      type: "searchFilter",
-      payload: {
-        type: "filterInput",
-        text: searchInput,
-      },
+      type: "typeFilter",
+      payload: e.target.value,
     });
   };
 
@@ -41,7 +43,7 @@ const SearchBox = () => {
             type="radio"
             name="searchBy"
             value="name"
-            checked={"name" === filterInput}
+            checked={"name" === searchInputFilterType}
             onChange={filterChangeHandler}
           />
           <label htmlFor="name">Name</label>
@@ -53,7 +55,7 @@ const SearchBox = () => {
             name="searchBy"
             className="ingredients"
             value="ingredients"
-            checked={"ingredients" === filterInput}
+            checked={"ingredients" === searchInputFilterType}
             onChange={filterChangeHandler}
           />
           <label htmlFor="ingredients">Ingredients</label>
@@ -64,7 +66,7 @@ const SearchBox = () => {
             type="radio"
             name="searchBy"
             value="cuisine"
-            checked={"cuisine" === filterInput}
+            checked={"cuisine" === searchInputFilterType}
             onChange={filterChangeHandler}
           />
           <label htmlFor="cuisine">Cuisine</label>
