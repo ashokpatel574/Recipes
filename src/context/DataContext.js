@@ -3,7 +3,7 @@ import { DataReducer } from "../reducer/DataReducer";
 import { recipes } from "../constant";
 
 const initialState = {
-  recipes: JSON.parse(localStorage.getItem("recipes")) || recipes,
+  recipes: JSON.parse(localStorage.getItem("allRecipes")) || recipes,
   showAddRecipeModal: false,
   searchInputFilterType: "name",
   searchText: "",

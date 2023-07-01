@@ -10,7 +10,10 @@ const AddRecipeModal = () => {
     cuisine: "",
   });
 
-  const { dispatch } = useData();
+  const {
+    dispatch,
+    state: { recipes },
+  } = useData();
   const closeModal = () => {
     dispatch({ type: "CloseAddRecipeModal" });
   };
@@ -43,6 +46,7 @@ const AddRecipeModal = () => {
   };
 
   const addRecipeHandler = () => {
+    localStorage.setItem("allRecipes", [...recipes, newRecipe]);
     dispatch({ type: "AddNewRecipe", payload: newRecipe });
   };
 
