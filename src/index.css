@@ -1,0 +1,252 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  font-size: 1.8rem;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #faf9f9;
+}
+
+header {
+  background-color: #ccc;
+}
+
+.header nav {
+  max-width: 145rem;
+  margin: 0 auto;
+  padding: 2rem 5rem;
+  font-size: 2.2rem;
+}
+
+.main_container {
+  max-width: 145rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 4rem;
+}
+
+.recipe-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.recipe-container .title {
+  font-size: 2.4rem;
+}
+
+.recipe-container ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.recipeCard {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1.5rem;
+  max-width: 25rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.recipeCardImgbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.recipeCardImgbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.icon-container {
+  background-color: white;
+  padding: 0.6rem 1.2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.icon-container svg {
+  font-size: 2.4rem;
+}
+
+.closeBtn {
+  cursor: pointer;
+}
+
+.recipeCardTextbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.recipeCardTextbox p {
+  font-size: 1.6rem;
+}
+
+.recipeCardTextbox div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.recipeCardTextbox div span {
+  font-size: 1.5rem;
+}
+
+.recipeCardTextbox div span:first-child {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.recipeCardTextbox div span svg {
+  font-size: 2.4rem;
+  cursor: pointer;
+}
+
+.addItemIcon-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  max-width: 25rem;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.addItemIcon-container svg {
+  position: absolute;
+  top: 50%;
+  font-size: 3.6rem;
+  cursor: pointer;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.recipeModal-container {
+  background-color: #fff;
+  max-width: 50rem;
+  width: 100%;
+  height: fit-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: rem;
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+}
+
+.recipeModal-container div:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipeModal-container label,
+.recipeModal-container input,
+.recipeModal-container textarea {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.recipeModal-container input,
+.recipeModal-container textarea {
+  padding: 0.3rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.addRecipeBtn {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.3rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.recipeModal-container textarea {
+  resize: none;
+  min-height: 5rem;
+  height: 100%;
+}
+
+.recipeDetail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.recipeDetailsbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 140rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.recipeDetails-ImgContainer {
+  max-width: 35rem;
+  width: 100%;
+}
+
+.recipeDetails-ImgContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.recipeDetails-textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btnBack {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.8rem;
+}
