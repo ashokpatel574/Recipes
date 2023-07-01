@@ -57,6 +57,7 @@ export const recipes = [
     cuisine: "Indian",
   },
   {
+    id: uuid(),
     name: "Caprese Salad",
     image:
       "https://www.foodnetwork.com/content/dam/images/food/fullset/2003/9/22/0/tm1a35_caprese_salad.jpg",
